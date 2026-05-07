@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata Lengkap | Peneliti & Akademisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: linear-gradient(135deg, #134b27, #14532d);
+        color: #ff69b4;
+        scroll-behavior: smooth;
+      }
+
+      .glow-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 15% 15%, rgba(255, 105, 180, 0.15) 0%, transparent 50%), radial-gradient(circle at 85% 85%, rgba(255, 20, 147, 0.15) 0%, transparent 50%);
+        z-index: -1;
+      }
+
+      .neon-border {
+        border: 1px solid rgba(255, 20, 147, 0.4);
+        box-shadow: 0 0 20px rgba(255, 20, 147, 0.2);
+      }
+
+      .neon-text {
+        color: #ff1493;
+        text-shadow: 0 0 10px rgba(255, 20, 147, 0.4);
+      }
+
+      .glass-card {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 105, 180, 0.2);
+      }
+
+      /* ACTIVE NAV */
+      .nav-active {
+        color: #ff1493;
+        border-bottom: 2px solid #ff1493;
+      }
+
+      /* ===== TAMBAHAN ANIMASI SCROLL PROFESIONAL ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* animasi foto floating */
+      .float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <div class="glow-bg"></div>
+
+    <!-- NAVIGASI -->
+    <nav class="fixed top-6 right-6 z-50">
+      <div class="glass-card px-6 py-3 rounded-full flex gap-6 text-xs font-semibold backdrop-blur-xl">
+        <a href="#tentang" class="nav-item hover:text-pink-200 transition">Tentang Saya</a>
+        <a href="#biodata" class="nav-item hover:text-pink-200 transition">Biodata</a>
+        <a href="#pendidikan" class="nav-item hover:text-pink-200 transition">Pendidikan</a>
+        <a href="#skill" class="nav-item hover:text-pink-200 transition">Kegemaran</a>
+        <a href="#kontak" class="nav-item hover:text-pink-200 transition">Kontak Saya</a>
+        <a href="#marketplace" class="nav-item hover:text-pink-200 transition">Marketplace</a>
+      </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+      <!-- HEADER -->
+      <section class="grid md:grid-cols-3 gap-12 items-center mb-20 reveal">
+        <div class="md:col-span-1 flex justify-center">
+          <div class="relative group float">
+            <div class="absolute -inset-1 bg-[#ff1493] rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-64 h-80 rounded-[35px] overflow-hidden bg-zinc-900 neon-border">
+              <img src="img/sw.jpeg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <span class="inline-block px-6 py-2 rounded-full bg-[#ff1493]/10 text-[#ff1493] text-sm md:text-base font-bold tracking-widest uppercase mb-4"> Hallo guys 🙌 </span>
+
+          <h1 class="text-4xl md:text-6xl font-black mb-2">Dian <span class="neon-text">Naswa</span></h1>
+
+          <p class="text-xl text-pink-300 font-light mb-6">Mahasiswa Agribisnis Peternakan • Universitas Hasanuddin</p>
+        </div>
+      </section>
+
+      <!-- TENTANG -->
+      <section id="tentang" class="mb-16 reveal">
+        <div class="glass-card p-8 rounded-[32px]">
+          <h3 class="text-xl font-bold mb-4 neon-text">🧕 Tentang Saya</h3>
+          <p class="text-pink-300 text-sm leading-relaxed">
+            Halo perkenalkan saya Dian Naswa, saya lahir di soppeng pada 09 Agustus 2005, dan saat ini berusia 20 tahun. Saya merupakan mahasiswa Agribisnis Peternakan angkatan 2024 di Universitas Hasanuddin yang memiliki minat besar dalam
+            pengembangan usaha peternakan modern dan agribisnis berkelanjutan.
+          </p>
+        </div>
+      </section>
+
+      <!-- BIODATA & PENDIDIKAN -->
+      <div id="biodata" class="mb-16 reveal">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- BIODATA -->
+          <div>
+            <h3 class="text-xl font-bold mb-6 text-center neon-text">🪪Biodata</h3>
+
+            <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Tempat Lahir<br /><span class="text-pink-200">Soppeng</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Tanggal Lahir<br /><span class="text-pink-200">09 Agustus 2005</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Kewarganegaraan<br /><span class="text-pink-200">Indonesia</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Alamat<br /><span class="text-pink-200">Makassar</span></div>
+            </div>
+          </div>
+
+          <!-- PENDIDIKAN -->
+          <div id="pendidikan">
+            <h3 class="text-xl font-bold mb-6 text-center neon-text">📚Pendidikan</h3>
+
+            <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Nama<br /><span class="text-pink-200">Dian Naswa</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Jurusan<br /><span class="text-pink-200">Agribisnis Peternakan</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Kampus<br /><span class="text-pink-200">Universitas Hasanuddin</span></div>
+              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Status<br /><span class="text-pink-200">Mahasiswa Aktif</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEGEMARAN -->
+      <div id="skill" class="mb-16 reveal">
+        <h3 class="text-xl font-bold mb-6 text-center neon-text">Kegemaran</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Bernyanyi -->
+          <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition">
+            <div class="text-5xl mb-4">🎤</div>
+            <h4 class="text-lg font-bold text-pink-200 mb-2">Bernyanyi</h4>
+            <p class="text-pink-300 text-sm leading-relaxed">Bernyanyi menjadi cara saya mengekspresikan perasaan, meningkatkan rasa percaya diri, serta memberikan ketenangan di sela kesibukan akademik.</p>
+          </div>
+
+          <!-- Memasak -->
+          <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition">
+            <div class="text-5xl mb-4">🍳</div>
+            <h4 class="text-lg font-bold text-pink-200 mb-2">Memasak</h4>
+            <p class="text-pink-300 text-sm leading-relaxed">Memasak adalah hobi yang melatih kreativitas dan ketelitian saya dalam menciptakan berbagai hidangan, serta menjadi bentuk relaksasi yang menyenangkan.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== KONTAK PREMIUM ===== -->
+      <div id="kontak" class="mb-16 reveal">
+        <h3 class="text-xl font-bold mb-6 text-center neon-text">📞 Kontak Saya</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
+            <div class="text-4xl mb-3">📱</div>
+            <h4 class="text-pink-200 font-bold mb-1">WhatsApp</h4>
+            <p class="text-pink-300 text-sm">+62 812 4230 6670</p>
+          </div>
+          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
+            <div class="text-4xl mb-3">📧</div>
+            <h4 class="text-pink-200 font-bold mb-1">Email</h4>
+            <p class="text-pink-300 text-sm">diannnnn@gmail.com</p>
+          </div>
+          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
+            <div class="text-4xl mb-3">📸</div>
+            <h4 class="text-pink-200 font-bold mb-1">Instagram</h4>
+            <p class="text-pink-300 text-sm">@dian_naswa</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MARKETPLACE SECTION (TAMBAHAN) ===== -->
+      <div id="marketplace" class="mb-16 reveal">
+        <h3 class="text-xl font-bold mb-6 text-center neon-text">🛒 Penjualan Sapi</h3>
+        <div class="glass-card p-10 rounded-[40px] text-center border-2 border-pink-500/30">
+          <div class="text-6xl mb-6">🐂</div>
+          <h4 class="text-2xl font-bold text-pink-100 mb-4">SWANA MEAT</h4>
+          <p class="text-pink-300 mb-8 max-w-lg mx-auto">Temukan berbagai pilihan sapi potong berkualitas terbaik langsung dari peternakan. Klik tombol di bawah untuk menuju ke platform penjualan resmi kami.</p>
+          <!-- LINK MARKETPLACE ANDA -->
+          <a
+            href="https://market-place-nine-tau.vercel.app/"
+            target="_blank"
+            class="inline-block px-10 py-4 bg-[#ff1493] hover:bg-pink-600 text-white font-bold rounded-full transition transform hover:scale-110 shadow-lg shadow-pink-500/50"
+          >
+            Kunjungi Marketplace →
+          </a>
+        </div>
+      </div>
+
+      <footer class="py-12 text-center border-t border-pink-300/10">
+        <p class="text-pink-400 text-[10px] tracking-[0.3em] font-bold uppercase">© 2026 Dian Naswa</p>
+      </footer>
+
+      <!-- NAV ACTIVE -->
+      <script>
+        const links = document.querySelectorAll('.nav-item');
+
+        links.forEach((link) => {
+          link.addEventListener('click', () => {
+            links.forEach((l) => l.classList.remove('nav-active'));
+            link.classList.add('nav-active');
+          });
+        });
+
+        /* ===== ANIMASI SCROLL PROFESIONAL ===== */
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+          }
+        );
+
+        reveals.forEach((el) => observer.observe(el));
+      </script>
+    </main>
+  </body>
+</html>
