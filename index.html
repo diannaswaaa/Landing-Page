@@ -3,75 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biodata Lengkap | Peneliti & Akademisi</title>
+    <title>Biodata Lengkap | Dian Naswa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
     <style>
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        background: linear-gradient(135deg, #134b27, #14532d);
-        color: #ff69b4;
+        background: #a8c69f; /* Hijau Sage */
+        color: #f0fff4;
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
+      /* Latar Belakang Cahaya Bergerak */
       .glow-bg {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at 15% 15%, rgba(255, 105, 180, 0.15) 0%, transparent 50%), radial-gradient(circle at 85% 85%, rgba(255, 20, 147, 0.15) 0%, transparent 50%);
+        background: radial-gradient(circle at 20% 30%, rgba(209, 250, 229, 0.4) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(15, 81, 50, 0.3) 0%, transparent 40%);
         z-index: -1;
       }
 
-      .neon-border {
-        border: 1px solid rgba(255, 20, 147, 0.4);
-        box-shadow: 0 0 20px rgba(255, 20, 147, 0.2);
+      /* Teks Nama Mewah */
+      .luxury-text {
+        font-family: 'Playfair Display', serif;
+        background: linear-gradient(to right, #064e3b 10%, #d97706 40%, #064e3b 60%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 4s linear infinite;
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
       }
 
-      .neon-text {
-        color: #ff1493;
-        text-shadow: 0 0 10px rgba(255, 20, 147, 0.4);
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Garis Bawah Header Utama - Hijau Tua */
+      .luxury-underline {
+        height: 4px;
+        width: 120px;
+        background: linear-gradient(to right, transparent, #064e3b, #059669, #064e3b, transparent);
+        margin: 12px auto;
+        border-radius: 10px;
+      }
+
+      @media (min-width: 768px) {
+        .luxury-underline {
+          margin-left: 0;
+        }
+      }
+
+      /* Judul Section Hijau Tua */
+      .section-title {
+        color: #064e3b;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 800;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+        border-bottom: 3px solid #064e3b;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 25px;
       }
 
       .glass-card {
-        background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 105, 180, 0.2);
+        background: rgba(15, 81, 50, 0.88);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       }
 
-      /* ACTIVE NAV */
-      .nav-active {
-        color: #ff1493;
-        border-bottom: 2px solid #ff1493;
+      .nav-item {
+        color: #064e3b;
+        transition: 0.3s;
+      }
+      .nav-item:hover {
+        color: #ffffff;
+        background: #064e3b;
+        border-radius: 20px;
+        padding: 4px 12px;
       }
 
-      /* ===== TAMBAHAN ANIMASI SCROLL PROFESIONAL ===== */
+      /* Animasi Reveal */
       .reveal {
         opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s ease;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       }
-
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* animasi foto floating */
-      .float {
-        animation: float 4s ease-in-out infinite;
+      /* Float Animation untuk Foto */
+      .profile-frame {
+        animation: float 5s ease-in-out infinite;
+        border: 8px solid rgba(255, 255, 255, 0.2);
       }
-
       @keyframes float {
-        0% {
-          transform: translateY(0px);
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
         }
         50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0px);
+          transform: translateY(-15px) rotate(2deg);
         }
       }
     </style>
@@ -80,157 +120,170 @@
   <body class="antialiased">
     <div class="glow-bg"></div>
 
-    <!-- NAVIGASI -->
-    <nav class="fixed top-6 right-6 z-50">
-      <div class="glass-card px-6 py-3 rounded-full flex gap-6 text-xs font-semibold backdrop-blur-xl">
-        <a href="#tentang" class="nav-item hover:text-pink-200 transition">Tentang Saya</a>
-        <a href="#biodata" class="nav-item hover:text-pink-200 transition">Biodata</a>
-        <a href="#pendidikan" class="nav-item hover:text-pink-200 transition">Pendidikan</a>
-        <a href="#skill" class="nav-item hover:text-pink-200 transition">Kegemaran</a>
-        <a href="#kontak" class="nav-item hover:text-pink-200 transition">Kontak Saya</a>
-        <a href="#marketplace" class="nav-item hover:text-pink-200 transition">Marketplace</a>
+    <!-- Navigasi -->
+    <nav class="fixed top-6 right-6 z-50 hidden md:block">
+      <div class="bg-white/60 border border-white/30 px-8 py-3 rounded-full flex gap-6 text-xs font-bold backdrop-blur-xl shadow-lg">
+        <a href="#tentang" class="nav-item">Tentang</a>
+        <a href="#biodata" class="nav-item">Biodata</a>
+        <a href="#pendidikan" class="nav-item">Pendidikan</a>
+        <a href="#skill" class="nav-item">Kegemaran</a>
+        <a href="#kontak" class="nav-item">Kontak</a>
+        <a href="#marketplace" class="nav-item text-amber-700">Marketplace</a>
       </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
-      <!-- HEADER -->
-      <section class="grid md:grid-cols-3 gap-12 items-center mb-20 reveal">
+    <main class="max-w-5xl mx-auto px-6 py-12 md:py-24">
+      <!-- Header Section -->
+      <section class="grid md:grid-cols-3 gap-12 items-center mb-24 reveal">
         <div class="md:col-span-1 flex justify-center">
-          <div class="relative group float">
-            <div class="absolute -inset-1 bg-[#ff1493] rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div class="relative w-64 h-80 rounded-[35px] overflow-hidden bg-zinc-900 neon-border">
-              <img src="img/sw.jpeg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+          <div class="relative group">
+            <div class="absolute -inset-4 bg-emerald-600/30 rounded-[50px] blur-2xl opacity-50"></div>
+            <div class="relative w-64 h-80 rounded-[40px] overflow-hidden profile-frame shadow-2xl">
+              <img src="img/sw.jpeg" class="w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700" alt="Dian Naswa" />
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-2">
-          <span class="inline-block px-6 py-2 rounded-full bg-[#ff1493]/10 text-[#ff1493] text-sm md:text-base font-bold tracking-widest uppercase mb-4"> Hallo guys 🙌 </span>
+        <div class="md:col-span-2 text-center md:text-left">
+          <span class="inline-block px-5 py-1.5 rounded-full bg-emerald-900/10 text-emerald-900 text-xs font-black tracking-[0.2em] uppercase mb-6 border border-emerald-900/20"> Welcome to My Portfolio </span>
+          <h1 class="text-6xl md:text-8xl font-black luxury-text mb-2">Dian Naswa</h1>
+          <div class="luxury-underline mb-8"></div>
 
-          <h1 class="text-4xl md:text-6xl font-black mb-2">Dian <span class="neon-text">Naswa</span></h1>
-
-          <p class="text-xl text-pink-300 font-light mb-6">Mahasiswa Agribisnis Peternakan • Universitas Hasanuddin</p>
+          <div class="flex items-center justify-center md:justify-start gap-3 text-emerald-950 font-bold uppercase tracking-widest text-sm md:text-base whitespace-nowrap">
+            <span>Mahasiswa Agribisnis Peternakan</span>
+            <span class="text-emerald-800 text-xl md:text-2xl">•</span>
+            <span>Universitas Hasanuddin</span>
+          </div>
         </div>
       </section>
 
-      <!-- TENTANG -->
-      <section id="tentang" class="mb-16 reveal">
-        <div class="glass-card p-8 rounded-[32px]">
-          <h3 class="text-xl font-bold mb-4 neon-text">🧕 Tentang Saya</h3>
-          <p class="text-pink-300 text-sm leading-relaxed">
-            Halo perkenalkan saya Dian Naswa, saya lahir di soppeng pada 09 Agustus 2005, dan saat ini berusia 20 tahun. Saya merupakan mahasiswa Agribisnis Peternakan angkatan 2024 di Universitas Hasanuddin yang memiliki minat besar dalam
-            pengembangan usaha peternakan modern dan agribisnis berkelanjutan.
+      <!-- Tentang Section (Updated to Center) -->
+      <section id="tentang" class="mb-20 reveal text-center">
+        <h3 class="section-title">🧕 Tentang Saya</h3>
+
+        <div class="glass-card p-10 rounded-[40px]">
+          <p class="text-emerald-50 text-base md:text-lg leading-relaxed font-light text-center">
+            Halo perkenalkan saya <span class="font-bold text-amber-400">Dian Naswa</span>, lahir di Soppeng pada 09 Agustus 2005. Sebagai mahasiswa Agribisnis Peternakan angkatan 2024 di
+            <span class="italic text-emerald-200">Universitas Hasanuddin</span>, saya berdedikasi untuk mempelajari integrasi antara teknologi modern dan keberlanjutan dalam dunia peternakan.
           </p>
         </div>
       </section>
 
-      <!-- BIODATA & PENDIDIKAN -->
-      <div id="biodata" class="mb-16 reveal">
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- BIODATA -->
-          <div>
-            <h3 class="text-xl font-bold mb-6 text-center neon-text">🪪Biodata</h3>
+      <!-- Biodata & Pendidikan -->
+      <div class="grid md:grid-cols-2 gap-8 mb-20">
+        <section id="biodata" class="reveal text-center">
+          <h3 class="section-title">🪪 Biodata Diri</h3>
+          <div class="glass-card p-8 rounded-[35px] space-y-4 h-full">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Tempat Lahir</p>
+              <p class="font-bold text-emerald-300">Soppeng</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Tanggal Lahir</p>
+              <p class="font-bold text-emerald-300">09 Agustus 2005</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Kebangsaan</p>
+              <p class="font-bold text-emerald-300">Indonesia</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Domisili</p>
+              <p class="font-bold text-emerald-300">Makassar</p>
+            </div>
+          </div>
+        </section>
 
-            <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Tempat Lahir<br /><span class="text-pink-200">Soppeng</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Tanggal Lahir<br /><span class="text-pink-200">09 Agustus 2005</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Kewarganegaraan<br /><span class="text-pink-200">Indonesia</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Alamat<br /><span class="text-pink-200">Makassar</span></div>
+        <section id="pendidikan" class="reveal text-center">
+          <h3 class="section-title">📚 Pendidikan</h3>
+          <div class="glass-card p-8 rounded-[35px] space-y-4 h-full">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Institusi</p>
+              <p class="font-bold text-emerald-300">Universitas Hasanuddin</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Program Studi</p>
+              <p class="font-bold text-emerald-300">Agribisnis Peternakan</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Angkatan</p>
+              <p class="font-bold text-emerald-300">2024</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+              <p class="text-xs opacity-60 mb-1">Status Keaktifan</p>
+              <p class="font-bold text-emerald-300">Mahasiswa Aktif</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Kegemaran Section -->
+      <section id="skill" class="mb-20 reveal text-center">
+        <h3 class="section-title">✨ Kegemaran</h3>
+        <div class="grid md:grid-cols-2 gap-8 mt-4">
+          <div class="glass-card p-8 rounded-[35px] hover:translate-y-[-10px] transition duration-500 group flex flex-col items-center">
+            <div class="text-6xl mb-6 group-hover:scale-110 transition">🎤</div>
+            <div class="w-full p-6 rounded-2xl bg-[#064e3b] border border-white/10 shadow-inner">
+              <h4 class="text-2xl font-bold text-[#d1fae5] mb-3">Bernyanyi</h4>
+              <p class="text-emerald-100/90 text-sm leading-relaxed">Ekspresi jiwa dan cara saya menemukan ketenangan di tengah hiruk pikuk dunia perkuliahan.</p>
             </div>
           </div>
 
-          <!-- PENDIDIKAN -->
-          <div id="pendidikan">
-            <h3 class="text-xl font-bold mb-6 text-center neon-text">📚Pendidikan</h3>
-
-            <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Nama<br /><span class="text-pink-200">Dian Naswa</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Jurusan<br /><span class="text-pink-200">Agribisnis Peternakan</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Kampus<br /><span class="text-pink-200">Universitas Hasanuddin</span></div>
-              <div class="p-3 rounded-2xl bg-black/20 border border-pink-300/10">Status<br /><span class="text-pink-200">Mahasiswa Aktif</span></div>
+          <div class="glass-card p-8 rounded-[35px] hover:translate-y-[-10px] transition duration-500 group flex flex-col items-center">
+            <div class="text-6xl mb-6 group-hover:scale-110 transition">🍳</div>
+            <div class="w-full p-6 rounded-2xl bg-[#064e3b] border border-white/10 shadow-inner">
+              <h4 class="text-2xl font-bold text-[#d1fae5] mb-3">Memasak</h4>
+              <p class="text-emerald-100/90 text-sm leading-relaxed">Seni meramu rasa yang melatih kesabaran dan kreativitas dalam setiap hidangan.</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- KEGEMARAN -->
-      <div id="skill" class="mb-16 reveal">
-        <h3 class="text-xl font-bold mb-6 text-center neon-text">Kegemaran</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Bernyanyi -->
-          <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition">
-            <div class="text-5xl mb-4">🎤</div>
-            <h4 class="text-lg font-bold text-pink-200 mb-2">Bernyanyi</h4>
-            <p class="text-pink-300 text-sm leading-relaxed">Bernyanyi menjadi cara saya mengekspresikan perasaan, meningkatkan rasa percaya diri, serta memberikan ketenangan di sela kesibukan akademik.</p>
-          </div>
-
-          <!-- Memasak -->
-          <div class="glass-card p-8 rounded-3xl text-center hover:scale-[1.02] transition">
-            <div class="text-5xl mb-4">🍳</div>
-            <h4 class="text-lg font-bold text-pink-200 mb-2">Memasak</h4>
-            <p class="text-pink-300 text-sm leading-relaxed">Memasak adalah hobi yang melatih kreativitas dan ketelitian saya dalam menciptakan berbagai hidangan, serta menjadi bentuk relaksasi yang menyenangkan.</p>
-          </div>
+      <!-- Kontak Section -->
+      <section id="kontak" class="mb-20 reveal text-center">
+        <h3 class="section-title">📞 Jalin Koneksi</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+          <a href="https://wa.me/6281242306670" class="glass-card p-6 rounded-3xl hover:bg-emerald-800 transition">
+            <div class="text-3xl mb-2">📱</div>
+            <h4 class="font-bold text-emerald-300">WhatsApp</h4>
+            <p class="text-xs opacity-70">+62 812 4230 6670</p>
+          </a>
+          <a href="mailto:diannnnn@gmail.com" class="glass-card p-6 rounded-3xl hover:bg-emerald-800 transition">
+            <div class="text-3xl mb-2">📧</div>
+            <h4 class="font-bold text-emerald-300">Email</h4>
+            <p class="text-xs opacity-70">diannnnn@gmail.com</p>
+          </a>
+          <a href="https://instagram.com/dian_naswa" class="glass-card p-6 rounded-3xl hover:bg-emerald-800 transition">
+            <div class="text-3xl mb-2">📸</div>
+            <h4 class="font-bold text-emerald-300">Instagram</h4>
+            <p class="text-xs opacity-70">@dian_naswa</p>
+          </a>
         </div>
-      </div>
+      </section>
 
-      <!-- ===== KONTAK PREMIUM ===== -->
-      <div id="kontak" class="mb-16 reveal">
-        <h3 class="text-xl font-bold mb-6 text-center neon-text">📞 Kontak Saya</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
-            <div class="text-4xl mb-3">📱</div>
-            <h4 class="text-pink-200 font-bold mb-1">WhatsApp</h4>
-            <p class="text-pink-300 text-sm">+62 812 4230 6670</p>
-          </div>
-          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
-            <div class="text-4xl mb-3">📧</div>
-            <h4 class="text-pink-200 font-bold mb-1">Email</h4>
-            <p class="text-pink-300 text-sm">diannnnn@gmail.com</p>
-          </div>
-          <div class="glass-card p-6 rounded-3xl text-center hover:scale-[1.03] transition">
-            <div class="text-4xl mb-3">📸</div>
-            <h4 class="text-pink-200 font-bold mb-1">Instagram</h4>
-            <p class="text-pink-300 text-sm">@dian_naswa</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== MARKETPLACE SECTION (TAMBAHAN) ===== -->
-      <div id="marketplace" class="mb-16 reveal">
-        <h3 class="text-xl font-bold mb-6 text-center neon-text">🛒 Penjualan Sapi</h3>
-        <div class="glass-card p-10 rounded-[40px] text-center border-2 border-pink-500/30">
-          <div class="text-6xl mb-6">🐂</div>
-          <h4 class="text-2xl font-bold text-pink-100 mb-4">SWANA MEAT</h4>
-          <p class="text-pink-300 mb-8 max-w-lg mx-auto">Temukan berbagai pilihan daging berkualitas terbaik langsung dari peternakan. Klik tombol di bawah untuk menuju ke platform penjualan resmi kami.</p>
-          <!-- LINK MARKETPLACE ANDA -->
+      <!-- Marketplace Section -->
+      <section id="marketplace" class="mb-20 reveal text-center">
+        <div class="glass-card p-12 rounded-[50px] border-2 border-emerald-900/30 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-right from-transparent via-emerald-900 to-transparent"></div>
+          <div class="text-7xl mb-6">🥩</div>
+          <h4 class="text-4xl font-black text-amber-400 mb-4 tracking-tight">SWANA MEAT</h4>
+          <p class="text-emerald-100 mb-10 max-w-xl mx-auto text-lg">Platform penyedia sapi potong kualitas unggul langsung dari sumbernya. Modern, Terpercaya, dan Berkualitas.</p>
           <a
             href="https://market-place-nine-tau.vercel.app/"
             target="_blank"
-            class="inline-block px-10 py-4 bg-[#ff1493] hover:bg-pink-600 text-white font-bold rounded-full transition transform hover:scale-110 shadow-lg shadow-pink-500/50"
+            class="inline-block px-12 py-5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-black rounded-full transition transform hover:scale-105 shadow-[0_0_20px_rgba(251,191,36,0.4)]"
           >
-            Kunjungi Marketplace →
+            Kunjungi Marketplace Sekarang →
           </a>
         </div>
-      </div>
+      </section>
 
-      <footer class="py-12 text-center border-t border-pink-300/10">
-        <p class="text-pink-400 text-[10px] tracking-[0.3em] font-bold uppercase">© 2026 Dian Naswa</p>
+      <footer class="py-12 text-center">
+        <div class="w-20 h-1 bg-emerald-900/20 mx-auto mb-6"></div>
+        <p class="text-emerald-900 text-xs tracking-[0.4em] font-black uppercase opacity-60">© 2026 Dian Naswa • All Rights Reserved</p>
       </footer>
 
-      <!-- NAV ACTIVE -->
       <script>
-        const links = document.querySelectorAll('.nav-item');
-
-        links.forEach((link) => {
-          link.addEventListener('click', () => {
-            links.forEach((l) => l.classList.remove('nav-active'));
-            link.classList.add('nav-active');
-          });
-        });
-
-        /* ===== ANIMASI SCROLL PROFESIONAL ===== */
         const reveals = document.querySelectorAll('.reveal');
-
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -239,11 +292,8 @@
               }
             });
           },
-          {
-            threshold: 0.15,
-          }
+          { threshold: 0.1 }
         );
-
         reveals.forEach((el) => observer.observe(el));
       </script>
     </main>
